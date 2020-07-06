@@ -18,12 +18,14 @@ api = Api(app)
 
 
 @app.route('/routes', methods=['POST', 'GET'])
-def login():
+def route():
     if request.method == 'POST':
         clustersMap = {}
         for driver_id in request.json.keys():
             clustersMap[driver_id] = [{'orderId': str(x['orderId']), 'lat': x['lat'], 'lng': x['lng']} for x in request.json[driver_id]['orders']];
         return {'routes': get_routes_v2(clustersMap)}
+    else if request.method == 'GET':
+        return 'duocun route api'
     else:
         return None
 
