@@ -1,8 +1,6 @@
 # py-route-api
 routing api
 
-
-
 ## install packages
 python3 -m venv py-route-api-env
 source ./py-route-api-env/bin/activate
